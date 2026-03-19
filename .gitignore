@@ -8,5 +8,5 @@
 *.run.xml
 *.blg
 *.toc
-*.synctex(busy)
+*.synctex.*
 *.pdf

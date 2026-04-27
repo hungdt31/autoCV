@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 %	The MIT License (MIT)
 %
@@ -32,17 +33,19 @@
 %	FONT
 %----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
+% fontspec allows you to use TTF/OTF fonts directly
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
 
-% % modified for ShareLaTeX use
+% Use a system font that supports Vietnamese (e.g., Arial, Times New Roman, or Calibri)
+% If you have specific OTF files, you can uncomment the lines below
 % \setmainfont[
 % SmallCapsFont = Fontin-SmallCaps.otf,
 % BoldFont = Fontin-Bold.otf,
 % ItalicFont = Fontin-Italic.otf
 % ]
 % {Fontin.otf}
+\setmainfont{Times New Roman} % Common font that supports Vietnamese
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
@@ -88,6 +91,13 @@
 
 %for social icons
 \usepackage{fontawesome5}
+\usepackage{fancyhdr}
+
+% Footer configuration
+\pagestyle{fancy}
+\fancyhf{} % Clear all headers and footers
+\renewcommand{\headrulewidth}{0pt} % Remove the horizontal line at the top
+\fancyfoot[R]{\footnotesize Personal proof: \href{https://drive.google.com/drive/folders/1xuzW6nMIUNZ8DPcMAYzBtpsdtBfsKtxs?usp=sharing}{Google Drive}}
 
 %debug page outer frames
 %\usepackage{showframe}
@@ -123,8 +133,8 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+% non-numbered pages (we use fancy style now for the footer)
+\pagestyle{fancy} 
 
 %----------------------------------------------------------------------------------------
 %	TITLE
@@ -263,6 +273,6 @@ THE SPRING VOLUNTEER CAMPAIGN in 2024 and 2025. \\
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+% \center{\footnotesize Last updated: \today}
 
 \end{document}
